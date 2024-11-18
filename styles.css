@@ -4,7 +4,7 @@ footer {
 
 .whatsapp_float {
     position: fixed;
-    bottom: 150px;
+    bottom: 90px;
     right: 20px;
     z-index: 999;
     border-radius: 50%;
@@ -74,6 +74,18 @@ footer {
     font-size: 60px; /* Smaller size for smaller screens */
   }
 }
+@media (min-width: 250px) and (max-width: 768x) {
+  .centered {
+    font-size: 6px; /* Smaller size for smaller screens */
+  }
+}
+
+
+
+
+
+
+
 
 
 
@@ -107,4 +119,53 @@ footer {
 
 
 
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
+.responsive-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.responsive-text b {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 320px) {
+  .responsive-text {
+      font-size: 0.9rem; /* Smaller font for smaller screens */
+      line-height: 1.4;
+  }
+
+  .responsive-text b {
+      font-size: 1.2rem; /* Adjust the bold text size */
+  }
+}
+
+@media (min-width: 320px) and (max-width: 400px) {
+  .responsive-text {
+      font-size: 0.9rem; /* Smaller font for smaller screens */
+      line-height: 1.4;
+  }
+
+  .responsive-text b {
+      font-size: 1.2rem; /* Adjust the bold text size */
+  }
+}
+@media (min-width: 401px) and (max-width: 576px) {
+  .responsive-text {
+      font-size: 1rem; /* Smaller font for smaller screens */
+      line-height: 1.4;
+  }
+
+  .responsive-text b {
+      font-size: 1.2rem; /* Adjust the bold text size */
+  }
+}
 
