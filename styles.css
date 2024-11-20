@@ -1,7 +1,8 @@
-footer {
-    background-color: #0d8317;  /* Replace "#333" with your preferred color code */
-}
 
+
+body {
+  background-color: #f0ebeb;
+}
 .whatsapp_float {
     position: fixed;
     bottom: 90px;
@@ -121,11 +122,12 @@ footer {
 
 
 .responsive-img {
-  max-width: 100%;
+  max-width: 40%;
   height: auto;
   display: block;
   margin: 0 auto;
 }
+
 
 
 .responsive-text {
