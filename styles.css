@@ -1,7 +1,7 @@
 
 
 body {
-  background-color: #f0ebeb;
+  background-color: #ffffff;
 }
 .whatsapp_float {
     position: fixed;
@@ -172,3 +172,41 @@ body {
 }
 
 
+
+
+
+
+/* Navbar */
+.navbar {
+  padding: 0.5rem 0rem;
+  box-shadow: 0 2px 4px rgba(231, 40, 40, 0.1);
+  font-size: 18px;
+}
+
+  /* Transparent navbar when scrolling */
+  #navbar {
+      transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .navbar-transparent {
+      background-color: transparent !important;
+  }
+  .navbar-scrolled {
+      background-color: rgba(255, 255, 255, 0.8) !important; /* Change to preferred color */
+  }
+  .navbar-hidden {
+      transform: translateY(-100%); /* Hide navbar */
+  }
+.navbar-brand img {
+  height: 150px;
+}
+
+.nav-link {
+  color: #333;
+  font-weight: 600;
+  margin: 0 0.5rem;
+  font-size: 20px;
+}
+
+.nav-link:hover {
+  color: #28a745;
+}

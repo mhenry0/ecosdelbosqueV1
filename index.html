@@ -28,44 +28,69 @@
 
   gtag('config', 'G-MLD9SNVCRJ');
 </script>
+
+
+<!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
 </head>
 
 <body>
-
+ 
 <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style="margin-bottom: 10px;">
-    <div class="container">
-        <a class="navbar-brand" href="./index.html">
-            <img src="./img/newblackbg.png" alt="Ecos del Bosque Logo" style="width: 150px;">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto" style="font-size: 25px; font-weight: 500">
-                <li id="us-section" class="nav-item">
-                    <a class="nav-link" href="#us" style="color: #28a745;">Us</a>
-                </li>
-                <li id="activities-section" class="nav-item">
-                    <a class="nav-link" href="#activities" style="color: #28a745;">Activities</a>
-                </li>
-                <li id="combo-tours-section" class="nav-item">
-                    <a class="nav-link" href="#combo-tours" style="color: #28a745;">Combo Tours</a>
-                </li>
-                <li id="contact-section" class="nav-item">
-                    <a class="nav-link" href="#contact" style="color: #28a745;">Contact</a>
-                </li>
-                <li id="location-section" class="nav-item">
-                    <a class="nav-link" href="#location" style="color: #28a745;">Location</a>
-                </li>
-                <li id="about" class="nav-item">
-                    <a class="nav-link" href="#combo-tours" style="color: #28a745;">About</a>
-                </li>
-                <li> <a class="nav-link" href="./rules.html" style="color: #28a745;">Rules</a>
-            </ul>
-        </div>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="navbar">
+  <div class="container">
+      <a class="navbar-brand" href="./Home.html">
+          <img src="./img/newblackbg.png" alt="Ecos del Bosque Logo"> <!-- Replace with actual logo path -->
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item" id="us"><a class="nav-link" href="#us-section">Us</a></li>
+            <li class="nav-item" id="activities"><a class="nav-link" href="#activities-section">Activities</a></li>
+            <li class="nav-item" id="contact"><a class="nav-link" href="#contact-section">Contact</a></li>
+            <li class="nav-item" id="location"><a class="nav-link" href="#location-section">Location</a></li>
+            <li class="nav-item" id="rules"><a class="nav-link" href="./rules.html">Rules</a></li>
+            <li class="nav-item" id="about"><a class="nav-link" href="#about-section">About</a></li>
+            
+            
+         
+
+              <!-- Icon button to toggle translation element -->
+              <button class="btn btn-link" onclick="toggleTranslate()" aria-expanded="false" style="font-size: 1.5rem;">
+                  <i class="fas fa-globe"></i>
+              </button>
+
+              <!-- Translation element, initially hidden -->
+              <div id="translateContainer" style="display: none; text-align: center;">
+                  <div id="google_translate_element"></div>
+              </div>
+
+              <!-- Translation script -->
+              <script type="text/javascript">
+                  function googleTranslateElementInit() {
+                      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                  }
+
+                  // Function to toggle the translation element
+                  function toggleTranslate() {
+                      const translateContainer = document.getElementById('translateContainer');
+                      translateContainer.style.display = translateContainer.style.display === 'none' ? 'block' : 'none';
+                  }
+              </script>
+
+              <!-- Load Google Translate script -->
+              <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+          </ul>
+      </div>
+  </div>
 </nav>
+
 
 
 
@@ -95,14 +120,14 @@
                 <p class="responsive-text"><b>New Website Launching in</b></p>
                 <b><p id="demo"></p></b>
             </h1>
-            <section id="us"></section>
+            <section id="us-section"></section>
             <div class="d-flex justify-content-center">
               <iframe width="600" height="330" src="https://www.youtube.com/embed/Pqma5A4oSh8?si=QfqASxzW5ghnpwsG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
           <br><br>
           
-            <p class="responsive-text">
-              <b>Ecos del Bosque Natural Wildlife Reserve</b>
+          <p class="responsive-text" data-aos="fade-right" data-aos-duration="2000">
+            <b>Ecos del Bosque Natural Wildlife Reserve</b>
               <br><br>
               Welcome to <i>Ecos del Bosque Natural Wildlife Reserve</i>, a sanctuary where nature and tranquility converge. Nestled in lush greenery, our reserve offers a unique experience to explore diverse ecosystems, encounter wildlife, and rejuvenate in harmony with nature.
               <br><br>
@@ -116,6 +141,7 @@
             
                 Discover serene trails, vibrant landscapes, and immersive activities that highlight the beauty and importance of conservation in the Osa Peninsula.
                 <br><br>
+                
                 <b style="font-size: 1.5rem;">The Osa Peninsula</b>
                 <br><br>
                 As the biological bridge between North and South America, Osa Peninsula is a unique haven of biodiversity.
@@ -133,17 +159,11 @@
                     <b>BOOK YOUR EXPERIENCE HERE!</b>
                 </a>
             </p>
-            <p style="text-align: center; font-size: 1.5rem;">Choose a language to translate:</p>
-            <div id="google_translate_element" style="text-align: center;"></div>
+           
         </div>
     </section>
     
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
     
         <br>
         
@@ -194,301 +214,256 @@
 
 
 <h2 style= "font-weight: bold; text-align: center; font-size: 80px; background-color: rgb(17, 175, 78); color: #ffffff;">TOURS</h2>
-
-<section id="activities">
+<br>
+<br>
+<section id="activities-section">
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="row row-cols-1 row-cols-md-2 g-4" style="padding-left: 10px; padding-right: 10px;">
-            <div class="col">
-              <div class="card">
-                <img src="./img/DSCF0115.JPG" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title" style="font-size: 25px; font-weight: bold;">Self-Guided Walk</h5>
-                  
-
-                  <div class="keyword-bubbles">
-                    <span class="bubble">Biodiverse Exploration</span>
-                    <span class="bubble">Wildlife Encounters</span>
-                    <span class="bubble">Tropical Paradise</span>
-                    <span class="bubble">Nature Immersion</span>
-                    <span class="bubble">Serene Wander</span>
-
+          <div class="col">
+            <div class="card" style="width: 100%;"> <!-- Adjusted width for a larger layout -->
+              <img src="./img/DSCF0115.JPG" class="card-img-top" alt="Self-Guided Walk" style="height: 300px; object-fit: cover;"> <!-- Set height and scaling -->
+              <div class="card-body">
+                <!-- Keyword Bubbles -->
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;">
+                  <span style="background-color: #4CAF50; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Biodiverse Exploration</span>
+                  <span style="background-color: #4CAF50; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Wildlife Encounters</span>
+                  <span style="background-color: #4CAF50; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Tropical Paradise</span>
+                  <span style="background-color: #4CAF50; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Nature Immersion</span>
+                  <span style="background-color: #4CAF50; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Serene Wander</span>
                 </div>
-                <br>
-                  <p class="card-text"></p>
-                  <p>Embark on a Self-Guided Walk through a lush 6 km wildlife reserve in the heart of the Osa Peninsula. As you wander 
-                  at your own pace, immerse yourself in the vibrant sights
-                  and sounds of one of the world's most biodiverse regions. 
-                  <br>
-                  <br> 
-                  Traverse winding trails under the canopy of towering trees, 
-                  with opportunities to spot colorful toucans, monkeys, trogons at times, tangaras, woodcreepers and 
-                  a variety of other wildlife unique to this tropical paradise.
-                  <br>
-                  <br>
-                  Each step brings a new experience, from serene streams to  
-                  captivating flora, allowing for quiet reflection or a chance
-                  to learn about the intricate ecosystems thriving around you.</p>
-                  <br>
-                  <br>
-                  <b>ENTRANCE PRICE: $10 per person.</b> Pay on arrival. Max 50 persons per day, save your space via WhatsApp.
-                  <br>
-                  <br>
-                  <b>DURATION</b>
-                  <br> 
-              
-                  <p>Minimum 1 hour, maximum as long as you want to stay. <a href="#target-section">See Map Here</a>     
-
-                  <br>
-                  <br>
-                  <b>Opening Time: 7 AM</b>
-                  <br>
-                  <b>Closing Time: 4 PM </b></p>
-                  
-                  <a href="https://wa.me/+50663576163" class="btn btn-primary" target="_blank">Book Here!</a>  
-                
+          
+                <!-- Accordion for Information -->
+                <div class="accordion" id="accordionExample2">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne2">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="false" aria-controls="collapseOne2">
+                        Self-Guided Walk: Explore the Reserve at Your Own Pace
+                      </button>
+                    </h2>
+                    <div id="collapseOne2" class="accordion-collapse collapse" aria-labelledby="headingOne2" data-bs-parent="#accordionExample2">
+                      <div class="accordion-body">
+                        Embark on a Self-Guided Walk through a lush 6 km wildlife reserve in the heart of the Osa Peninsula. As you wander at your own pace, immerse yourself in the vibrant sights and sounds of one of the world's most biodiverse regions.
+                        <br><br>
+                        Traverse winding trails under the canopy of towering trees, with opportunities to spot colorful toucans, monkeys, trogons, tangaras, woodcreepers, and other wildlife unique to this tropical paradise.
+                        <br><br>
+                        Each step brings a new experience, from serene streams to captivating flora, allowing for quiet reflection or a chance to learn about the intricate ecosystems thriving around you.
+                        <br><br>
+                        <b>Entrance Price:</b> $10 per person. Pay on arrival. Max 50 persons per day; save your space via WhatsApp.
+                        <br><br>
+                        <b>Duration:</b> Minimum 1 hour, maximum as long as you want to stay. <a href="#target-section">See Map Here</a>
+                        <br><br>
+                        <b>Opening Time:</b> 7 AM<br>
+                        <b>Closing Time:</b> 4 PM
+                      </div>
+                    </div>
+                  </div>
                 </div>
+          
+                <!-- Booking Button -->
+                <a href="https://wa.me/+50663576163" class="btn btn-primary mt-3" target="_blank">Book Here!</a>
               </div>
             </div>
+          </div>
+          
+          
 
-
-            <div class="col">
-                <div class="card">
-                  <img src="./img/nightwalk1.jpeg" class="card-img-top" alt="..." style="width: 100%;">                  <div class="card-body">
-                    <h5 class="card-title" style="font-size: 25px; font-weight: bold;">Nightwalk</h5>
-                    <div class="keyword-bubbles">
-                      <span class="bubble">Nocturnal Adventure</span>
-                      <span class="bubble">Snakes Spotting</span>
-                      <span class="bubble">Mysterious Creatures</span>
-                      <span class="bubble">Forest Sounds</span>
-                      <span class="bubble">Twilight Wonders</span>
-
-
-  
-                  </div>
-                  <br>
-                    <p class="card-text">
-                      Join us for a thrilling Night Walk through the enchanting  
-                      wildlife reserve, where the magic of the nocturnal world  
-                      comes alive. As the sun sets, prepare to embark on an  
-                      adventure filled with fascinating encounters. 
-                      <br>
-                      <br>
-                      Keep your  
-                      eyes open for the elusive Tiger Frog, whose vibrant colors  
-                      stand out in the darkness. Watch your step as you may  
-                      cross paths with the Fer de Lance, a striking but  
-                      cautious serpent that calls this reserve home.  
-                      <br>
-                      <br>
-                      Delve into the realm of scorpions and tarantulas,  
-                      whose intriguing behaviors will captivate your senses.  
-                      Listen for the croaks of various frogs adding a symphony of sounds to your  
-                      experience. And the flying bats crossing the open skies, as well as the reign of the moths. Even some butterflies. Or the not so studied Candy Cane Katydid!
-                      <br>
-                      <br>
-                      This Night Walk promises unforgettable  
-                      moments and a deeper understanding of the wildlife  
-                      that thrives under the cover of darkness.  
-                    </p>
-                    <br>
-                    <br>
-                    <b>PRICE: $45 per person.</b> 
-                    <br>
-                    <br>
-                    <b>DURATION</b>
-                    <br> 
-                
-                    <p>2 hours
-                    <br>
-                    Start Time: 6 PM. Only one schedule.
-                    <br>
-                    <br>
-                    <p>Minimum 2 people, Maximum 10 people.
-                    </p>
-                   </p>
-                    
-                    
-                    <a href="https://wa.me/+50663576163" class="btn btn-primary" target="_blank">Book Here!</a>                  
-                  </div>
+          <div class="col">
+            <div class="card" style="width: 100%;"> <!-- Adjusted card width -->
+              <img src="./img/nightwalk1.jpeg" class="card-img-top" alt="Nightwalk" style="height: 300px; object-fit: cover;"> <!-- Larger image with scaling -->
+              <div class="card-body">
+                <!-- Title -->
+                <h5 class="card-title" style="font-size: 25px; font-weight: bold;">Nightwalk</h5>
+          
+                <!-- Keyword Bubbles -->
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;">
+                  <span style="background-color: #4CAF50; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Nocturnal Adventure</span>
+                  <span style="background-color: #4CAF50; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Snakes Spotting</span>
+                  <span style="background-color: #4CAF50; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Mysterious Creatures</span>
+                  <span style="background-color: #4CAF50; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Forest Sounds</span>
+                  <span style="background-color: #4CAF50; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Twilight Wonders</span>
                 </div>
-              </div>
-  
-              <div class="col">
-                <div class="card">
-                  <img src="./img/DSCF0095.JPG" class="card-img-top" alt="..." style="width: 100%;">
-                  <div class="card-body">
-                    <h5 class="card-title" style="font-size: 25px; font-weight: bold;">Natural History Hike</h5>
-                    <div class="keyword-bubbles">
-                    <span class="bubble">An ancient Connection</span>
-                    <span class="bubble">Cultural Heritage</span>
-                    <span class="bubble">Eco-Conservation</span>
-                    <span class="bubble">Scenic Trails</span>
-                    <span class="bubble">Wildlife Observation</span>
-                    <span class="bubble">Archeology</span>
-
+          
+                <!-- Accordion for Information -->
+                <div class="accordion" id="accordionExample3">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne3">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne3" aria-expanded="false" aria-controls="collapseOne3">
+                        Nightwalk: Discover the Nocturnal World
+                      </button>
+                    </h2>
+                    <div id="collapseOne3" class="accordion-collapse collapse" aria-labelledby="headingOne3" data-bs-parent="#accordionExample3">
+                      <div class="accordion-body">
+                        Join us for a thrilling Night Walk through the enchanting wildlife reserve, where the magic of the nocturnal world comes alive. As the sun sets, prepare to embark on an adventure filled with fascinating encounters.
+                        <br><br>
+                        Keep your eyes open for the elusive Tiger Frog, vibrant Fer de Lance serpents, scorpions, and tarantulas. Listen for the croaks of frogs and spot the reign of nocturnal insects such as bats, moths, and the rare Candy Cane Katydid.
+                        <br><br>
+                        This Night Walk promises unforgettable moments and a deeper understanding of the wildlife that thrives under the cover of darkness.
+                        <br><br>
+                        <b>Price:</b> $45 per person.<br>
+                        <b>Duration:</b> 2 hours (Start Time: 6 PM).<br>
+                        <b>Group Size:</b> Minimum 2 people, Maximum 10 people.
+                      </div>
                     </div>
-                    <br>
-                    <p class="card-text">
-                      
-                    Join us for an immersive Natural History Hike, where you'll explore the stunning landscapes and rich biodiversity of the region. 
-                    <br>
-                    <br>
-                    As you traverse the picturesque trails, our experienced guides will share fascinating insights into the unique flora and fauna that inhabit this natural paradise.
-                    <br>
-                    <br>
-                    Discover the history of the first settlers and the indigenous peoples, learning about their legacy and connection to the land, and archeology. 
-                    <br>
-                    <br>
-                    From ancient trees to vibrant wildflowers, you'll uncover the intricate relationships within ecosystems and the importance of conservation efforts. Keep your camera ready for possible wildlife sightings, including birds, mammals, and other creatures that call this area home.
-                    <br>
-                    <br>
-                    Whether you're a nature enthusiast or just looking to enjoy a day outdoors, this hike promises to be a memorable adventure for all!
-                    
-                    </p>
-                    <br>
-                    <br>
-                    <b>PRICE: $50 per person, includes snacks, cookies, fruits, water, coffee, and natural orange juice. </b> 
-                    <br>
-                    <br>
-                    <b>EXTRA WITH LUNCH</b>
-                    <br>
-                    <br>
-                    With lunch it is $70, it also includes a tour about aquaculture and Tilapia natural reproduction. We take lunch at a local restaurant. We will provide you the lunch options before the tour.
-                    <br>
-                    <br>
-                    <b>DURATION:</b> 2.5 - 3 hours
-                    <br>
-                    <br>
-                    
-                    Start Times: Early Birding 6.30 AM (Available) 7 AM. 10 AM. 2 PM. 
-                    <br>
-                    <br>
-                   </p>
-                    
-                    <a href="https://wa.me/+50663576163" class="btn btn-primary" target="_blank">Book Here!</a>                  
                   </div>
                 </div>
+          
+                <!-- Booking Button -->
+                <a href="https://wa.me/+50663576163" class="btn btn-primary mt-3" target="_blank">Book Here!</a>
               </div>
-
-              <div class="col">
-                <div class="card">
-                  <img src="./img/farm.JPG" class="card-img-top" alt="..." style="width: 100%;">
-                  <div class="card-body">
-                    <h5 class="card-title" style="font-size: 25px; font-weight: bold;">Farm Tour and Natural Medicine</h5>
-                    <div class="keyword-bubbles">
-                    <span class="bubble">Sustainable Agriculture</span>
-                    <span class="bubble">Herbal Remedies</span>
-                    <span class="bubble">Nature's Healing</span>
-                    <span class="bubble">Organic Practices</span>
-                    <span class="bubble">Biodiversity Benefits</span>
+            </div>
+          </div>
+          
+          <div class="col">
+            <div class="card" style="width: 100%;"> <!-- Adjusted card width -->
+              <img src="./img/DSCF0095.JPG" class="card-img-top" alt="Natural History Hike" style="height: 300px; object-fit: cover;"> <!-- Larger image with scaling -->
+              <div class="card-body">
+                <!-- Title -->
+                <h5 class="card-title" style="font-size: 25px; font-weight: bold;">Natural History Hike</h5>
+          
+                <!-- Keyword Bubbles -->
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;">
+                  <span style="background-color: #4CAF50; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">An ancient Connection</span>
+                  <span style="background-color: #4CAF50; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Cultural Heritage</span>
+                  <span style="background-color: #4CAF50; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Eco-Conservation</span>
+                  <span style="background-color: #4CAF50; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Scenic Trails</span>
+                  <span style="background-color: #4CAF50; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Wildlife Observation</span>
+                  <span style="background-color: #4CAF50; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Archeology</span>
+                </div>
+          
+                <!-- Accordion for Information -->
+                <div class="accordion" id="accordionExample4">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne4">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne4" aria-expanded="false" aria-controls="collapseOne4">
+                        Natural History Hike: Explore the Past and Present
+                      </button>
+                    </h2>
+                    <div id="collapseOne4" class="accordion-collapse collapse" aria-labelledby="headingOne4" data-bs-parent="#accordionExample4">
+                      <div class="accordion-body">
+                        Join us for an immersive Natural History Hike, where you'll explore the stunning landscapes and rich biodiversity of the region.
+                        <br><br>
+                        Traverse picturesque trails with experienced guides who share fascinating insights into the flora and fauna. Learn about the region's first settlers, indigenous peoples, and archeological discoveries.
+                        <br><br>
+                        From ancient trees to vibrant wildflowers, you’ll witness the interdependence of ecosystems and the importance of conservation. Be prepared for wildlife sightings of birds, mammals, and more.
+                        <br><br>
+                        Whether you’re a nature enthusiast or just seeking a day outdoors, this hike promises a memorable experience for all!
+                        <br><br>
+                        <b>Price:</b> $50 per person, includes snacks, cookies, fruits, water, coffee, and natural orange juice.<br><br>
+                        <b>With Lunch:</b> $70, includes a tour on aquaculture and Tilapia reproduction, and lunch at a local restaurant (lunch options provided before the tour).<br><br>
+                        <b>Duration:</b> 2.5 - 3 hours<br><br>
+                        <b>Start Times:</b> 6:30 AM (Early Birding), 7 AM, 10 AM, 2 PM
+                      </div>
                     </div>
-                    <br>
-
-                    <p class="card-text">
-                      
-                      Experience our Farm Tour and Natural Medicine adventure, where you'll discover the wonders of sustainable agriculture and the healing power of nature. 
-                      <br>
-                      <br>
-                      Explore the vibrant fields and learn about organic farming practices that promote environmental health.
-                      <br>
-                      <br>
-                      As you stroll through the farm, our knowledgeable guides will introduce you to a variety of medicinal plants, explaining their traditional uses and benefits. You'll gain insights into herbal remedies, natural healing techniques, and the importance of biodiversity in maintaining a healthy ecosystem.
-                      <br>
-                      <br>
-                      This tour offers a unique opportunity to connect with nature, understand the origins of natural medicine, and appreciate the art of farming. 
-                      <br>
-                      <br>
-                      Whether you're a seasoned herbalist or simply curious about natural health, this experience will leave you inspired and informed!                    
-                    
-                    </p>
-                    <b>PRICE: </b>  $45 per person. Includes juice, water, and fruits. If you do this tour, you have a free pass to do the self-guided walk. 
-                    <br>
-                    <br>
-                    You can buy natural ginger and turmeric at the end of the tour. 
-                    <br>
-                    <br>
-                    <b>DURATION:</b> 1.30 hours
-                    <br>
-                    <br>
-                    
-                    Start Times:  4 PM.
-                    <br>
-                    <br>
-                    Minimum 2 people, Maximum 10 people.
-                    <br>
-                    <br>
-                    <a href="https://wa.me/+50663576163" class="btn btn-primary" target="_blank">Book Here!</a>                  
                   </div>
                 </div>
+          
+                <!-- Booking Button -->
+                <a href="https://wa.me/+50663576163" class="btn btn-primary mt-3" target="_blank">Book Here!</a>
               </div>
-              
-              <div class="col">
-                <div class="card">
-                  <img src="./img/waterfall.JPG" class="card-img-top" alt="..." style="width: 100%;">
-                  <div class="card-body">
-                    <h5 class="card-title" style="font-size: 25px; font-weight: bold;">Secret Waterfall</h5>
-
-                    <div class="keyword-bubbles">
-                        <span class="bubble">Tranquility</span>
-                        <span class="bubble">Adventure</span>
-                        <span class="bubble">Waterfall</span>
-                        <span class="bubble">Hidden Hideaway</span>
-                        <span class="bubble">Hiking</span>
-                        <span class="bubble">Refreshing Oasis</span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 100%;"> <!-- Adjusted card width -->
+              <img src="./img/farm.JPG" class="card-img-top" alt="Farm Tour and Natural Medicine" style="height: 300px; object-fit: cover;"> <!-- Larger image with scaling -->
+              <div class="card-body">
+                <!-- Title -->
+                <h5 class="card-title" style="font-size: 25px; font-weight: bold;">Farm Tour and Natural Medicine</h5>
+          
+                <!-- Keyword Bubbles -->
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;">
+                  <span style="background-color: #8BC34A; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Sustainable Agriculture</span>
+                  <span style="background-color: #8BC34A; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Herbal Remedies</span>
+                  <span style="background-color: #8BC34A; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Nature's Healing</span>
+                  <span style="background-color: #8BC34A; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Organic Practices</span>
+                  <span style="background-color: #8BC34A; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Biodiversity Benefits</span>
+                </div>
+          
+                <!-- Accordion for Information -->
+                <div class="accordion" id="accordionExample3">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne3">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne3" aria-expanded="false" aria-controls="collapseOne3">
+                        Farm Tour and Natural Medicine: Discover Sustainable Healing
+                      </button>
+                    </h2>
+                    <div id="collapseOne3" class="accordion-collapse collapse" aria-labelledby="headingOne3" data-bs-parent="#accordionExample3">
+                      <div class="accordion-body">
+                        Experience our Farm Tour and Natural Medicine adventure, where you'll discover the wonders of sustainable agriculture and the healing power of nature.
+                        <br><br>
+                        Explore vibrant fields and learn about organic farming practices that promote environmental health.
+                        <br><br>
+                        Walk through the farm with our knowledgeable guides as they introduce you to medicinal plants, explaining their traditional uses and benefits. Gain insights into herbal remedies, natural healing techniques, and the importance of biodiversity.
+                        <br><br>
+                        This tour offers a unique opportunity to connect with nature, understand the origins of natural medicine, and appreciate the art of farming.
+                        <br><br>
+                        Whether you're an experienced herbalist or simply curious, this experience will inspire and inform you.
+                        <br><br>
+                        <b>Price:</b> $45 per person, includes juice, water, and fruits. Free pass for a self-guided walk.<br><br>
+                        <b>Duration:</b> 1.5 hours<br><br>
+                        <b>Start Time:</b> 4 PM<br><br>
+                        <b>Minimum:</b> 2 people, <b>Maximum:</b> 10 people
+                      </div>
                     </div>
-                    <br>
-                    <p class="card-text">
-                      
-                      Embark on an enchanting journey to the Secret Waterfall, a hidden gem nestled within the lush wilderness. 
-                      <br>
-                      <br>
-                      This exclusive tour takes you off the beaten path, where you’ll discover stunning landscapes and the soothing sounds of cascading water.
-                      <br>
-                      <br>
-                      As you trek through the vibrant rainforest, our expert guides will share stories about the unique flora and fauna you encounter along the way. Once you reach the Secret Waterfall, take a moment to soak in the breathtaking views and the tranquility of this secluded oasis. 
-                      <br>
-                      <br>
-                      Feel free to dip your toes in the cool, refreshing waters or simply relax and enjoy the serene surroundings. 
-                      <br>
-                      <br>
-                      This unforgettable adventure is perfect for nature lovers, photographers, and anyone seeking a peaceful escape into nature’s beauty. 
-                      <br>
-                      <br>
-                      Join us for a day filled with exploration, wonder, and natural splendor!
-
-
-                    </p>
-                    <b>PRICE: </b>  $40 per person. Includes snacks, fruits, cookies, orange juice, and coffee.
-                    <br>
-                    <br>
-                    <b>EXTRA WITH LUNCH $60</b>
-                    <p> We can also take lunch at the Tilapia Restaurant nearby, it includes an extra tour about aquaculture; the production of tilapias.</p>
-                    <b>DURATION:</b> 2 hours
-                    <br>
-                    <br>
-                    Start Time: 11 AM. We offer only one schedule.
-                    <br>
-                    <br>
-                    Minimum 2 people, Maximum 10 people.
-                    <br>
-                    <br>
-                    <a href="https://wa.me/+50663576163" class="btn btn-primary" target="_blank">Book Here!</a>                  
                   </div>
                 </div>
+          
+                <!-- Booking Button -->
+                <a href="https://wa.me/+50663576163" class="btn btn-primary mt-3" target="_blank">Book Here!</a>
               </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 100%;"> <!-- Adjusted card width -->
+              <img src="./img/waterfall.JPG" class="card-img-top" alt="Secret Waterfall" style="height: 300px; object-fit: cover;"> <!-- Optimized image size -->
+              <div class="card-body">
+                <!-- Title -->
+                <h5 class="card-title" style="font-size: 25px; font-weight: bold;">Secret Waterfall</h5>
+          
+                <!-- Keyword Bubbles -->
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;">
+                  <span style="background-color: #2196F3; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Tranquility</span>
+                  <span style="background-color: #2196F3; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Adventure</span>
+                  <span style="background-color: #2196F3; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Waterfall</span>
+                  <span style="background-color: #2196F3; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Hidden Hideaway</span>
+                  <span style="background-color: #2196F3; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Hiking</span>
+                  <span style="background-color: #2196F3; color: white; padding: 4px 8px; border-radius: 15px; font-size: 0.8rem;">Refreshing Oasis</span>
+                </div>
+          
+                <!-- Accordion for Information -->
+                <div class="accordion" id="accordionExample2">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne2">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="false" aria-controls="collapseOne2">
+                        Secret Waterfall: An Exclusive Adventure
+                      </button>
+                    </h2>
+                    <div id="collapseOne2" class="accordion-collapse collapse" aria-labelledby="headingOne2" data-bs-parent="#accordionExample2">
+                      <div class="accordion-body">
+                        Embark on an enchanting journey to the Secret Waterfall, a hidden gem nestled within the lush wilderness.
+                        <br><br>
+                        This exclusive tour takes you off the beaten path, where you’ll discover stunning landscapes and the soothing sounds of cascading water.
+                        <br><br>
+                        Trek through the vibrant rainforest, while our expert guides share stories about the unique flora and fauna you encounter. Once at the Secret Waterfall, relax and soak in the breathtaking views, or dip your toes in the cool, refreshing waters.
+                        <br><br>
+                        This unforgettable adventure is perfect for nature lovers, photographers, or anyone seeking a peaceful escape into nature’s beauty.
+                        <br><br>
+                        <b>Price:</b> $40 per person, includes snacks, fruits, cookies, orange juice, and coffee.<br><br>
+                        <b>Extra with Lunch:</b> $60, includes a visit to the Tilapia Restaurant nearby and a tour on aquaculture.<br><br>
+                        <b>Duration:</b> 2 hours<br><br>
+                        <b>Start Time:</b> 11 AM (One scheduled time per day)<br><br>
+                        <b>Minimum:</b> 2 people, <b>Maximum:</b> 10 people
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          
+                <!-- Booking Button -->
+                <a href="https://wa.me/+50663576163" class="btn btn-primary mt-3" target="_blank">Book Here!</a>
+              </div>
+            </div>
+          </div>
+          
               
           </div>
           <br>
@@ -587,6 +562,8 @@
         <br>
         <br>
         <section class="about">
+          <section id="about-section">
+          </section>
             <div class="container">
                 <h2 >About Us</h2>
               <br>
@@ -742,14 +719,14 @@
         <br>
         <section class="contact">
             <div class="container">
-              <section id="contact">
+              <section id="contact-section">
               </section>
                 <h3>Contact Us</h3>
                 <br>
                 <p class="responsive-text">Email: infoecosdelbosque@gmail.com
                 <p class="responsive-text">Phone / WhatsApp: +506 6357 6163</p>
                 <br>
-                <section id="location">
+                <section id="location-section">
                 </section>
                 <h4>Location</h4>
                 <br>
@@ -817,7 +794,7 @@
 
 
     <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3103.6145418492088!2d-83.62504712626641!3d9.082421988153053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMDQnNTYuNyJOIDgzwrAzNycyMC45Ilc!5e1!3m2!1ses-419!2scr!4v1730264010660!5m2!1ses-419!2scr" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <footer class="text-light py-5" style="background-color: #166b16; font-size: 16px;">
+    <footer class="text-light py-5" style="background-color: #000000; font-size: 16px;">
       <div class="container">
           <!-- Inspirational Quote -->
           <div class="row mb-4">
@@ -833,9 +810,15 @@
               <!-- Contact Info -->
               <div class="col-md-6">
                   <h5>Contact Us</h5>
-                  <p>Email: <a href="mailto:infoecosdelbosque@gmail.com" style="text-decoration: none; color: inherit;">infoecosdelbosque@gmail.com</a></p>
-                  <p>Phone: <a href="https://wa.me/+50663576163" target="_blank" style="text-decoration: none; color: inherit;">+506 6357 6163</a></p>
-              </div>
+                  <p>
+                    <i class="fas fa-envelope"></i> 
+                    Email: <a href="mailto:infoecosdelbosque@gmail.com" style="text-decoration: none; color: inherit;">infoecosdelbosque@gmail.com</a>
+                  </p>
+                  <p>
+                    <i class="fab fa-whatsapp"></i> 
+                    Phone: <a href="https://wa.me/+50663576163" target="_blank" style="text-decoration: none; color: inherit;">+506 6357 6163</a>
+                  </p>
+                                </div>
   
               <!-- Social Media Links -->
               <div class="col-md-6 text-md-right text-center">

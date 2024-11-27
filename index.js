@@ -26,3 +26,40 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
+
+
+
+let lastScrollTop = 0; // Keep track of the last scroll position
+
+window.onscroll = function() {
+    const navbar = document.getElementById("navbar");
+
+    // Check if the user is scrolling down or up
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+        // Scrolling down
+        navbar.classList.add("navbar-hidden"); // Hide navbar
+    } else {
+        // Scrolling up
+        navbar.classList.remove("navbar-hidden"); // Show navbar
+    }
+
+    // Add transparency to the navbar when scrolling down more than 50px
+    if (currentScroll > 50) {
+        navbar.classList.add("navbar-scrolled");
+    } else {
+        navbar.classList.remove("navbar-scrolled");
+    }
+
+    // Update lastScrollTop to current scroll position
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+};
+
+
+
+
+
+
+// Initialize AOS
+AOS.init();
