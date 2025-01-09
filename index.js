@@ -69,3 +69,16 @@ AOS.init();
 
 
 
+function flipCard(cardElement) {
+    const isFlipped = cardElement.style.transform === "rotateY(180deg)";
+    cardElement.style.transform = isFlipped ? "rotateY(0deg)" : "rotateY(180deg)";
+}
+
+
+
+document.addEventListener("contextmenu", function(e) {
+    if (e.target.tagName === "IMG") {
+        e.preventDefault();
+    }
+});
+
